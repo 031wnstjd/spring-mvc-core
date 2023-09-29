@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 @WebServlet(name = "requestBodyJsonServlet", urlPatterns = "/request-body-json")
 public class RequestBodyJsonServlet extends HttpServlet {
 
-    // Spring은 매핑을 위해 내부적으로 Jackson 라이브러리를 사용
+    // 스프링은 JSON 데이터와 자바 객체 간 매핑을 위해 Jackson 라이브러리를 기본으로 사용
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
