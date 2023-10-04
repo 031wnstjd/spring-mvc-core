@@ -65,11 +65,18 @@ public class BasicItemController {
         return "basic/item";
     }
 
-    @PostMapping("/add")
+//    @PostMapping("/add")
     public String addItemV4(Item item) { // 객체 or HashMap의 경우, 어노테이션 생략 시 @ModelAttribute 자동 적용
         itemRepository.save(item);
         return "basic/item";
     }
+
+    @PostMapping("/add")
+    public String addItemV5(Item item) {
+        itemRepository.save(item);
+        return "redirect:/basic/items/" + item.getId(); // PRG(POST/REDIRECT/GET) 적용
+    }
+
 
     @GetMapping("{itemId}/edit")
     public String editForm(@PathVariable long itemId, Model model) {
